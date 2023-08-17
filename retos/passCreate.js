@@ -16,15 +16,21 @@
 
 //Solution
 
-let si = "SIza";
-let sii = "mani";
+const prompt = require('prompt-sync')({sigint:true});
+let si = prompt("Ingrese la primera palabra: ");
+let sii = prompt("Ingrese la segunda palabra: ");
 
 function passwordCreation(str1, str2) {
+
+    if (!(1 <= str1.length && str2.length <= 25000)) {
+        return "Las palabras deben tener entre 1 y 25000 caracteres";
+    }
+
     let result = "";
     let i = 0;
     let j = 0;
     
-    if (str1.toLowerCase() === str1 && str2.toLowerCase() === str2) {
+    if ((str1.toLowerCase() === str1 && str2.toLowerCase() === str2)) {
         while (i < str1.length || j < str2.length) {
             if (i < str1.length) {
                 result += str1[i];
