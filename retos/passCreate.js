@@ -16,24 +16,29 @@
 
 //Solution
 
-let si = "siza";
+let si = "SIza";
 let sii = "mani";
 
 function passwordCreation(str1, str2) {
     let result = "";
     let i = 0;
     let j = 0;
-    while (i < str1.length || j < str2.length) {
-        if (i < str1.length) {
-            result += str1[i];
-            i++;
+    
+    if (str1.toLowerCase() === str1 && str2.toLowerCase() === str2) {
+        while (i < str1.length || j < str2.length) {
+            if (i < str1.length) {
+                result += str1[i];
+                i++;
+            }
+            if (j < str2.length) {
+                result += str2[j];
+                j++;
+            }
         }
-        if (j < str2.length) {
-            result += str2[j];
-            j++;
-        }
+        return result;
+    } else {
+        return "Las palabras deben estar en minúscula";
     }
-    return result;
 }
 
 console.log(passwordCreation(si, sii));
